@@ -219,7 +219,7 @@ export class PlaycanvasRenderer {
 
     // css media query for aspect ratio changes
     var css = '@media screen and (min-aspect-ratio: ' + width + '/' + height + ') {'
-    css += '    #application-canvas.fill-mode-KEEP_ASPECT {'
+    css += '    #application-canvas.fill-mode-FILL_WINDOW {'
     css += '        width: auto;'
     css += '        height: 100%;'
     css += '        margin: 0 auto;'
@@ -301,6 +301,11 @@ export class PlaycanvasRenderer {
       reflow()
     }
     const { CONFIG_FILENAME } = window
+
+    app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
+    app.setCanvasResolution(pc.RESOLUTION_AUTO);
+
+    console.log('app._fillMode', app._fillMode)
 
     app?.configure(`./${CONFIG_FILENAME}`, (err: any) => {
       if (err) {
