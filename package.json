@@ -1,0 +1,27 @@
+{
+  "name": "vpcr",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/vpcr.umd.cjs",
+  "module": "./dist/vpcr.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vpcr.js",
+      "require": "./dist/vpcr.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.27",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6"
+  },
+  "dependencies": {
+    "playcanvas": "^1.69.1"
+  }
+}

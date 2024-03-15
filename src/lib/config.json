@@ -1,0 +1,60 @@
+{
+  "application_properties": {
+    "i18nAssets": [],
+    "useTouch": true,
+    "layerOrder": [],
+    "externalScripts": [],
+    "height": 720,
+    "vr": false,
+    "useModelV2": false,
+    "antiAlias": true,
+    "layers": {
+      "0": {
+        "transparentSortMode": 3,
+        "opaqueSortMode": 2,
+        "name": "World"
+      },
+      "1": {
+        "transparentSortMode": 3,
+        "opaqueSortMode": 2,
+        "name": "Depth"
+      },
+      "2": {
+        "transparentSortMode": 3,
+        "opaqueSortMode": 0,
+        "name": "Skybox"
+      },
+      "3": {
+        "transparentSortMode": 3,
+        "opaqueSortMode": 0,
+        "name": "Immediate"
+      },
+      "4": {
+        "transparentSortMode": 1,
+        "opaqueSortMode": 1,
+        "name": "UI"
+      }
+    },
+    "width": 1280,
+    "useDevicePixelRatio": true,
+    "useKeyboard": true,
+    "maxAssetRetries": 5,
+    "powerPreference": "high-performance",
+    "batchGroups": [],
+    "preserveDrawingBuffer": false,
+    "useLegacyScripts": false,
+    "enableSharedArrayBuffer": false,
+    "fillMode": "FILL_WINDOW",
+    "scripts": [],
+    "useMouse": true,
+    "use3dPhysics": false,
+    "transparentCanvas": false,
+    "resolutionMode": "AUTO",
+    "loadingScreenScript": null,
+    "preferWebGl2": true,
+    "useGamepads": false,
+    "libraries": []
+  },
+  "scenes": [],
+  "assets": {}
+}
