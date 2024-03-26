@@ -1,6 +1,14 @@
 // @ts-ignore
 import * as pc from 'playcanvas'
 
+// draco decoder
+import dracoWasmJsUrl from "./draco-decoder/draco.wasm.js?url";
+import dracoWasmWasmUrl from "./draco-decoder/draco.wasm.wasm?url";
+// basis decoder
+import basisWasmJsUrl from "./basis-decoder/basis.wasm.js?url";
+import basisWasmWasmUrl from "./basis-decoder/basis.wasm.wasm?url";
+import basisJsUrl from "./basis-decoder/basis.js?url";
+
 window.pc = pc
 
 
@@ -97,6 +105,19 @@ export class PlaycanvasRenderer {
     this.createCanvas(id)
     this.createInputDevices()
     this.createApp()
+
+    pc.dracoInitialize({
+      jsUrl: dracoWasmJsUrl,
+      wasmUrl: dracoWasmWasmUrl,
+      numWorkers: 2,
+      lazyInit: true,
+    })
+
+    pc.basisInitialize({
+      glueUrl: basisWasmJsUrl,
+      wasmUrl: basisWasmWasmUrl,
+      fallbackUrl: basisJsUrl,
+    })
 
     const configure = this.configure.bind(this)
     if (window.PRELOAD_MODULES.length > 0 && window.loadModules) {
