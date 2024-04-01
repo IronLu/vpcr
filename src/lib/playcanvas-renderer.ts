@@ -70,7 +70,7 @@ export class PlaycanvasRenderer {
   public windowSizeChangeIntervalHandler: any
   public assetPrefix: string = 'test'
 
-  constructor(id: string) {
+  constructor(id: string, canvasAnchor?: HTMLElement) {
     const { innerWidth: width, innerHeight: height } = window
     this.lastWindowSize = {
       width,
@@ -102,7 +102,7 @@ export class PlaycanvasRenderer {
     window.SCRIPT_PREFIX = this.assetPrefix
     window.iosVersion = getIosVersion()
 
-    this.createCanvas(id)
+    this.createCanvas(id, canvasAnchor)
     this.createInputDevices()
     this.createApp()
 
@@ -127,7 +127,7 @@ export class PlaycanvasRenderer {
     }
   }
 
-  createCanvas(canvasId: string = 'application-canvas') {
+  createCanvas(canvasId: string = 'application-canvas', canvasAnchor?: HTMLElement) {
     this.canvas.setAttribute('id', canvasId)
     this.canvas.setAttribute('tabindex', '0')
 
@@ -140,7 +140,11 @@ export class PlaycanvasRenderer {
     // @ts-ignore
     this.canvas.style['-webkit-user-select'] = 'none'
 
+    if (canvasAnchor) {
+      canvasAnchor.appendChild(this.canvas)
+    } else {
     document.body.appendChild(this.canvas)
+    }
   }
 
   createInputDevices() {
