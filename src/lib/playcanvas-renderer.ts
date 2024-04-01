@@ -143,8 +143,14 @@ export class PlaycanvasRenderer {
     if (canvasAnchor) {
       canvasAnchor.appendChild(this.canvas)
     } else {
-    document.body.appendChild(this.canvas)
+      document.body.appendChild(this.canvas)
     }
+  }
+
+  destroyCanvas() {
+    this.app?.destroy()
+    this.canvas.remove()
+    this.canvas = document.createElement('canvas')
   }
 
   createInputDevices() {
