@@ -183,6 +183,10 @@ export class PlaycanvasRenderer {
         scriptPrefix: SCRIPT_PREFIX,
         scriptsOrder: SCRIPTS,
       })
+      // Set canvas renderer max pixel ratio align with device pixel ratio
+      this.app.graphicsDevice.maxPixelRatio = window.devicePixelRatio
+
+      // Expose app in the global scope
       window.app = this.app
     } catch (e) {
       if (e instanceof pc.UnsupportedBrowserError) {
